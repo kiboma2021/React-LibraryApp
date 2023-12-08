@@ -21,12 +21,40 @@
   border-radius: 2rem;
 }
 
-.footer {
-  display: flex;
+.footer,
+.filter-btns {
+  display:flex;
   justify-content: center;
   align-items: center;
 }
 
 .main {
   min-height: 75vh;
+}
+
+.card {
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(235, 233, 231);
+  margin: 2rem;
+  border-radius: 5rem;
+}
+
+.filter-btns {
+  gap: 2rem;
+}
+
+.filter-btns > button {
+  padding: 1rem;
+  background-color: blueviolet;
+  border: none;
+  border-radius: 2rem;
+  font-size: larger;
+  color: white;
+}
+
+.card > h3 {
+  color: red;
 }
