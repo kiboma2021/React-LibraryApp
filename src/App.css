@@ -22,7 +22,8 @@
 }
 
 .footer,
-.filter-btns {
+.filter-btns,
+.loading {
   display:flex;
   justify-content: center;
   align-items: center;

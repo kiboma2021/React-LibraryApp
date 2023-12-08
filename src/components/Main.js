@@ -1,11 +1,12 @@
 import React, { useCallback, useEffect, useState } from 'react'
 import useFetch from '../hooks/useFetch';
+import Loading from '../assets/loading.png'
 
 const Main = () => {
 
    // const [books, setBooks] = useState([]);
     const [url,setUrl] = useState("http://localhost:8000/books");
-    const {data:books} = useFetch(url);
+    const {data:books, loading} = useFetch(url);
 
     console.log(books);
 
@@ -27,6 +28,10 @@ const Main = () => {
             <button onClick={()=>setUrl("http://localhost:8000/books")}>All Books</button>
             <button onClick={()=>setUrl("http://localhost:8000/books?best_author=true")}>Best Author</button>
         </div>
+        <div className='loading'>
+            {loading && <p> <img src={Loading} alt="" /> </p>}
+        </div>
+        
         {books && books.map(book =>(
             <div key={book.book_id} className='card'>
                 <h2>{book.book_name}</h2>
