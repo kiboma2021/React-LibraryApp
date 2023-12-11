@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import useFetch from '../hooks/useFetch';
 import Loading from '../assets/loading.png'
 
@@ -6,7 +6,7 @@ const Main = () => {
 
    // const [books, setBooks] = useState([]);
     const [url,setUrl] = useState("http://localhost:8000/books");
-    const {data:books, loading} = useFetch(url);
+    const {data:books, loading,error} = useFetch(url);
 
     console.log(books);
 
@@ -30,6 +30,7 @@ const Main = () => {
         </div>
         <div className='loading'>
             {loading && <p> <img src={Loading} alt="" /> </p>}
+            {error && <p>{error}</p>}
         </div>
         
         {books && books.map(book =>(
